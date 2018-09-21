@@ -9,8 +9,9 @@ var fs = require("fs");
 // File name from the common line params
 var fileName = process.argv[2];
 
-// Accessing the content of the file synchnously  
+// Accessing the content of the file synchnously
 var data = fs.readFileSync(fileName, "utf8");
-console.log(data);
+// chiamata bloccante poiché eseguita in modo sequenziale
 
+console.log(data);
 console.log("Program ended.");

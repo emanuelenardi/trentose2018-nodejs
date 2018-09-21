@@ -4,10 +4,11 @@
   "description": "Showcases how to handle basic form requests",
   "main": "app.js",
   "scripts": {
+    "start": "node app.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "Marcos",
-  "license": "ISC",
+  "author": "Emanuele Nardi",
+  "license": "MIT",
   "dependencies": {
     "express": "^4.16.3"
   }

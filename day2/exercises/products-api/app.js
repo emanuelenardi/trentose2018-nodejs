@@ -1,5 +1,5 @@
 /**
- * app.js 
+ * app.js
  * Implementation of the Product API
  */
 
@@ -14,17 +14,17 @@ app.use(bodyParser.urlencoded({ extended: true })); // support encoded bodies
 app.use('/', express.static('public'));
 
 // starting the server
+// process.env.PORT ???
 var port = process.env.PORT || 3000;
 app.listen(port, function(){
-  console.log('Products server listening at http://localhost:' + port);  
+  console.log('Products server listening at http://localhost:' + port);
 });
-
 
 // list of products we'll keep in memory
 var products = [{
   id : 1,
   name : "iPhone XL",
-  description : "Extra large"  
+  description : "Extra large"
 }];
 
 // Getting an individual product
@@ -49,4 +49,14 @@ app.post('/api/products', function (req, res) {
   res.location("/api/products/" + product.id);
   res.status(204);
   res.send();
+});
+
+// ---------------
+
+// adding a new course to the collection
+app.get('/api/products', function (req, res) {
+
+  // oggetto js -> stringify
+  res.send(JSON.stringify(products));
+  console.log(JSON.stringify(products));
 });
